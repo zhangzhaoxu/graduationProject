@@ -1,0 +1,27 @@
+
+.selectionItem {
+    padding: 6px 0 5px;
+    border-bottom: 1px solid #ececec;
+    zoom: 1;
+    line-height: 32px;
+    overflow: hidden;
+    .itemLiTitle {
+        float: left;
+        width: 70px;
+        font-weight: bold;
+        text-align: right;
+        margin: 0;
+    }
+    .itemLi {
+        float: left;
+        height: 24px;
+        line-height: 22px;
+        margin: 5px;
+        padding: 0 10px;
+    }
+    .current {
+        background: #e14104;
+        border: 0;
+        color: #fff;
+    }
+}

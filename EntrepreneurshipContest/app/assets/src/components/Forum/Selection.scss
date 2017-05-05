@@ -1,0 +1,27 @@
+
+.selectionContainer {
+    width: 1080px;
+    margin: auto;
+    border: 1px solid #d9d9d9;
+
+    .topBar {
+        height: 35px;
+        background-color: #f7f7f7;
+        line-height: 35px;
+        .barText {
+            margin-left: 10px;
+            color: #d73435;
+            font-weight: bold;
+        }
+        .barButton {
+            padding-left: 5px;
+            padding-right: 5px;
+            margin: 3px 10px 0 0;
+            float: right;
+            font-weight: normal;
+        }
+    }
+    .selectionBody {
+        padding: 0 25px;
+    }
+}

@@ -1,0 +1,48 @@
+
+.register {
+    height: 46px;
+    float: right;
+    width: 15%;
+    padding-right: 3%;
+    color: #108ee9;
+    font-size: 13px;
+    line-height: 50px;
+
+    .headImg {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        border-radius: 15px;
+        overflow: hidden;
+        vertical-align: middle;
+        img {
+            width: 30px;
+            height: 30px;
+        }
+    }
+
+    .logInfo {
+        display: inline-block;
+        margin-left: 10px;
+        .logOut {
+            color: #5a5a5a;
+            font-weight: 300;
+        }
+        .message {
+            color: #d73435;
+            margin-left: 8px;
+            display: inline-block;
+            .message-badge {
+                width: 25px;
+                height: 25px;
+                display: inline-block;
+            }
+            .message-icon {
+                line-height: 25px;
+                text-align: center;
+                font-size: 25px;
+                color: #919191;
+            }
+        }
+    }
+}

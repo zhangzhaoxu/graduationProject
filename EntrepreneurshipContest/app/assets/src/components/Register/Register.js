@@ -19,16 +19,19 @@ export default class Register extends React.Component {
                     <img src={headPorhtrait}/>
                 </div>
                 <div className="logInfo">
+                    {logged ? 
+                        <div className="message">
+                            <div>
+                                <Badge count={9}>
+                                    <a href="#" className="message-badge">
+                                        <Icon className="message-icon" type="message" />
+                                    </a>
+                                </Badge>
+                            </div>
+                        </div> 
+                        : ''}
+                    {logged ? <span className="personal">个人中心</span> : ''}
                     {logged ? <span className="logOut">登出</span> : <span>登录</span>}
-                    {logged ? <div className="message">
-                        <div>
-                            <Badge count={9}>
-                                <a href="#" className="message-badge">
-                                    <Icon className="message-icon" type="message" />
-                                </a>
-                            </Badge>
-                        </div>
-                    </div> : ''}
                 </div>
             </div>
         )

@@ -1,5 +1,5 @@
 import React from 'react';
-import Tabs from './Tabs';
+import Tabs from '../common/Tabs';
 
 export default function wrapper(Tabs, extra) {
     return class TabsWrapper extends React.Component {

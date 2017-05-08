@@ -1,4 +1,4 @@
-import defaultImg from '../../../../static/default.png';
+import defaultImg from '../../../../static/xiaoxin.jpg';
 
 const initialState = {
     logged: true,

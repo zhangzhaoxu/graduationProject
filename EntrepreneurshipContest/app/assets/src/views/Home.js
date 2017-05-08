@@ -5,9 +5,7 @@ import ArticleTable from '../components/Home/Table';
 import ArticleModal from '../components/Home/Modal';
 import Slider from '../components/Home/Slider';
 import Main from '../components/Home/Main';
-import Tabs from '../components/Home/Tabs';
-import Selection from '../components/Forum/Selection';
-import PostContainer from '../components/Forum/PostContainer';
+import Tabs from '../components/common/Tabs';
 import tabWrapper from '../components/Home/TabsWrapper';
 import { tableActions, modalActions } from './HomeRedux';
 import './Home.scss';
@@ -83,21 +81,14 @@ export default class Home extends Component {
 		let WrappedTabs = tabWrapper(Tabs, {className: "tabCon", data: testArr});
 		
 		return (
-			<div className="forum">
-				<Selection />
-				<PostContainer />
+			<div className="home">
+				<Slider />
+				<Main />
+				<WrappedTabs />
 			</div>
 		);
 	}
 }
-
-/*
-<div className="home">
-	<Slider />
-	<Main />
-	<WrappedTabs />
-</div>
-*/
 
 
 

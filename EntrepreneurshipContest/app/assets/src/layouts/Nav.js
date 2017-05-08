@@ -39,7 +39,7 @@ export default class Nav extends Component {
             current: e.key
         });
 
-        this.props.push('/forum');
+        this.props.push(e.key);
     };
     
     render () {
@@ -58,7 +58,7 @@ export default class Nav extends Component {
                     <Menu.Item key="home">
                         <Icon type="home" className="homeIcon" /> <span className="homeIcon">首页</span>
                     </Menu.Item>
-                    <SubMenu title={<span><Icon type="down-square-o" />全部赛事</span>}>
+                    <SubMenu key="competitions" title={<span onClick={this.handleClick.bind(this, {key: 'competitions'})}><Icon type="down-square-o" />全部赛事</span>}>
                         <MenuItemGroup title="赛事状态">
                             <Menu.Item key="setting:1">进行中</Menu.Item>
                             <Menu.Item key="setting:2">筹备中</Menu.Item>
@@ -69,7 +69,7 @@ export default class Nav extends Component {
                             <Menu.Item key="setting:4">金融类</Menu.Item>
                         </MenuItemGroup>
                     </SubMenu>
-                    <Menu.Item key="alipay">
+                    <Menu.Item key="forum">
                         赛事论坛
                     </Menu.Item>
                 </Menu>

@@ -1,13 +1,86 @@
 
 .post {
-    padding: 10px 0;
+    padding: 15px 0;
     margin: 0 20px;
     background-color: #ffffff;
+    overflow: hidden;
+    border-bottom: 1px solid #e9e9e9;
     .post-left {
         width: 70px;
         float: left;
+        .post-index-icon {
+            display: inline-block;
+            width: 50px;
+            height: 30px;
+            line-height: 26px;
+            margin-right: 20px;
+            text-align: center;
+            background: url('../../../../static/postIcon.png') no-repeat
+        }
     }
     .post-right {
         margin-left: 70px;
+        .right-title {
+            height: 25px;
+            padding: 0 5px;
+            .post-title {
+                color: #653096;
+                line-height: 25px;
+                width: 460px;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                font-size: 14px;
+            }
+
+            .post-avatar {
+                display: inline-block;
+                width: 25px;
+                height: 25px;
+                border-radius: 15px;
+                overflow: hidden;
+                vertical-align: middle;
+                float: right;
+                margin-right: 50px;
+                margin-top: -3px;
+            }
+
+
+            .post-author {
+                display: inline-block;
+                width: 50px;
+                color: #999;
+                font-size: 12px;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                float: right;
+                margin-right: 10px;
+            }
+        }
+
+        .right-body {
+            padding: 0 5px;
+            .body-des {
+                width: 460px;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                color: #666;
+            }
+            .body-extra {
+                .extra-imgCon {
+                    img {
+                        width: 120px;
+                        height: auto;
+                        margin: 5px 15px 5px 0;
+                    }
+                }
+            }
+            .post-button {
+                float: right;
+                margin-right: 50px;
+            }
+        }
     }
 }

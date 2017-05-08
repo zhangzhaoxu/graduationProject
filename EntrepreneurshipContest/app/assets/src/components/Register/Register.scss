@@ -2,7 +2,7 @@
 .register {
     height: 46px;
     float: right;
-    width: 15%;
+    width: 20%;
     padding-right: 3%;
     color: #108ee9;
     font-size: 13px;
@@ -24,9 +24,13 @@
     .logInfo {
         display: inline-block;
         margin-left: 10px;
+        .personal {
+            margin-left: 14px;
+        }
         .logOut {
             color: #5a5a5a;
             font-weight: 300;
+            margin-left: 5px;
         }
         .message {
             color: #d73435;
@@ -45,4 +49,8 @@
             }
         }
     }
+}
+
+.ant-menu {
+    background-color: red;
 }

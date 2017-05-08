@@ -8,14 +8,10 @@ class Index extends Component {
     };
     
     render() {
-
-        console.log(this.props);
         
         const { microdata, mydata } = this.props;
         let homeJs = `${microdata.styleDomain}/build/app.bundle.js`;
         let scriptUrls = [homeJs];
-
-        console.log(homeJs);
         
         return (
             <Default
@@ -30,6 +26,6 @@ class Index extends Component {
             </Default>
         );
     }
-};
+}
 
 module.exports = Index;

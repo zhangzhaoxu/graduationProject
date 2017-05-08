@@ -1,0 +1,25 @@
+.personal-phone {
+    padding: 30px;
+    text-align: center;
+    .phone-progress {
+        width: 500px;
+        margin: auto;
+        font-size: 30px;
+    }
+    .phone-form {
+        max-width: 400px;
+        margin: 50px auto;
+    }
+    .change-phone-button {
+        margin-top: 10px;
+    }
+    .finished {
+        margin-top: 30px;
+        color: #f04134;
+        font-size: 40px;
+    }
+}
+
+.ant-row {
+    height: 20px !important;
+}

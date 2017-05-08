@@ -1,0 +1,36 @@
+.sign-up {
+    padding: 10px;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.right-btn {
+    float: right;
+}
+
+.ant-tabs-tabpane.ant-tabs-tabpane-active {
+    border: none !important;
+}
+
+.avatar-uploader,
+.avatar-uploader-trigger,
+.avatar {
+    width: 120px;
+    height: 120px;
+    line-height: 120px !important;
+}
+
+.avatar-uploader {
+    display: block;
+    border: 1px dashed #d9d9d9;
+    border-radius: 6px;
+    cursor: pointer;
+    float: right;
+    text-align: center;
+}
+.avatar-uploader-trigger {
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 28px;
+    color: #999;
+}

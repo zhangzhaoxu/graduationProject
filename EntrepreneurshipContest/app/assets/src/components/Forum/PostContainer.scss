@@ -12,7 +12,6 @@
 }
 
 .card-container > .ant-tabs-card > .ant-tabs-content {
-    height: 120px;
     margin-top: -16px;
 }
 
@@ -31,4 +30,9 @@
 
 .ant-tabs:not(.ant-tabs-vertical) > .ant-tabs-content > .ant-tabs-tabpane {
     border: 1px solid #d9d9d9;
+}
+
+.post-pagination {
+    margin-top: 10px;
+    float: right;
 }

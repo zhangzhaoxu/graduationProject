@@ -25,8 +25,54 @@ const App = () => {
         }, true);
     });
 
+    router.get('/user', function* () {
+        this.body = this.render('Index', {
+            microdata: microdata,
+            mydata: {
+                nick: 'nmzl'
+            }
+        })
+    });
+    
+    router.get('/personal', function* () {
+        this.body = this.render('Index', {
+            microdata: microdata,
+            mydata: {
+                nick: 'nmzl'
+            }
+        })
+    });
+    
+    
+    
+    router.get('/forum', function* () {
+        this.body = this.render('Index', {
+            microdata: microdata,
+            mydata: {
+                nick: 'nmzl'
+            }
+        })
+    });
+
+    router.get('/competitions', function* () {
+        this.body = this.render('Index', {
+            microdata: microdata,
+            mydata: {
+                nick: 'nmzl'
+            }
+        })
+    });
+
+    router.get('/competitions/signup', function* () {
+        this.body = this.render('Index', {
+            microdata: microdata,
+            mydata: {
+                nick: 'nmzl'
+            }
+        })
+    });
+
     router.get('/api/articles.json', function* () {
-        console.log('/api/articles.');
         this.body = articlesData;
     });
     

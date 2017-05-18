@@ -4,7 +4,10 @@ const path = require('path');
 const reactview = require('./app/plugin/reactview/app.js');
 const Static = require('./app/middleware/static.js');
 const VERSION = require('./app/assets/package.json').version;
-var articlesData = require('./app/assets/api/articles.json');
+var newsData = require('./app/assets/api/news.json');
+var tabsData = require('./app/assets/api/homeTabs.json');
+var competitionsData = require('./app/assets/api/competitions.json');
+
 
 const App = () => {
     let app = koa();
@@ -15,70 +18,141 @@ const App = () => {
     };
     
     // 初始化 /home 路由 dispatch 的 generator
-    router.get(['/', '/home'], function* () {
+    router.get(['/','/home'] , function* () {
         // 执行 view 插件
+        var isLogged = this.cookies.get("isLogged");
         this.body = this.render('Index', {
-            microdata: microdata,
-            mydata: {
-                nick: 'nmzl'
-            }
+            userInfo : {
+                isLogged: isLogged
+            },
+            homeData: {
+                newsData: newsData,
+                tabsData: tabsData
+            },
+            competitionsData: {
+                competitionsData: competitionsData
+            },
+            microdata: microdata
         }, true);
     });
 
+    router.get('/logIn', function* () {
+        this.cookies.set("isLogged", "logged");
+        this.body = {
+            isLogged: "ceshiceshi"
+        }
+    });
+
+    router.get('/logOut', function* () {
+        this.cookies.set("isLogged", "logout");
+        this.body = {
+            isLogged: "zhendeshiceshi"
+        }
+    });
+
     router.get('/user', function* () {
+        var isLogged = this.cookies.get("isLogged");
         this.body = this.render('Index', {
-            microdata: microdata,
-            mydata: {
-                nick: 'nmzl'
-            }
-        })
+            userInfo : {
+                isLogged: isLogged
+            },
+            homeData: {
+                newsData: newsData,
+                tabsData: tabsData
+            },
+            competitionsData: {
+                competitionsData: competitionsData
+            },
+            microdata: microdata
+        }, true);
     });
     
     router.get('/personal', function* () {
+        var isLogged = this.cookies.get("isLogged");
         this.body = this.render('Index', {
-            microdata: microdata,
-            mydata: {
-                nick: 'nmzl'
-            }
-        })
+            userInfo : {
+                isLogged: isLogged
+            },
+            homeData: {
+                newsData: newsData,
+                tabsData: tabsData
+            },
+            competitionsData: {
+                competitionsData: competitionsData
+            },
+            microdata: microdata
+        }, true);
     });
-    
-    
-    
+
     router.get('/forum', function* () {
+        var isLogged = this.cookies.get("isLogged");
         this.body = this.render('Index', {
-            microdata: microdata,
-            mydata: {
-                nick: 'nmzl'
-            }
-        })
+            userInfo : {
+                isLogged: isLogged
+            },
+            homeData: {
+                newsData: newsData,
+                tabsData: tabsData
+            },
+            competitionsData: {
+                competitionsData: competitionsData
+            },
+            microdata: microdata
+        }, true);
     });
 
     router.get('/competitions', function* () {
+        var isLogged = this.cookies.get("isLogged");
         this.body = this.render('Index', {
-            microdata: microdata,
-            mydata: {
-                nick: 'nmzl'
+            userInfo : {
+                isLogged: isLogged
+            },
+            homeData: {
+                newsData: newsData,
+                tabsData: tabsData
+            },
+            competitionsData: {
+                competitionsData: competitionsData  
+            },
+            microdata: microdata
+        }, true);
+    });
+
+    router.get('/api/competitions.json', function* () {
+        var id = this.query.id;
+        var data = require('./app/assets/api/competitions'+id+'.json');
+        this.body =  {
+            competitionsData: {
+                competitionsData: data
             }
-        })
+        }
+    });
+    
+    router.get('/api/changePage.json', function* () {
+        var id = this.query.id;
+        var data = require('./app/assets/api/changePage.json');
+        this.body = {
+            pageData: data,
+            id: id
+        }
     });
 
     router.get('/competitions/signup', function* () {
+        var isLogged = this.cookies.get("isLogged");
         this.body = this.render('Index', {
-            microdata: microdata,
-            mydata: {
-                nick: 'nmzl'
-            }
-        })
+            userInfo : {
+                isLogged: isLogged
+            },
+            homeData: {
+                newsData: newsData,
+                tabsData: tabsData
+            },
+            competitionsData: {
+                competitionsData: competitionsData
+            },
+            microdata: microdata
+        }, true);
     });
-
-    router.get('/api/articles.json', function* () {
-        this.body = articlesData;
-    });
-    
-    // app.use(function (ctx) {
-    //     ctx.req.on('/api/articles')
-    // })
     
     app.use(router.routes()).use(router.allowedMethods());
     

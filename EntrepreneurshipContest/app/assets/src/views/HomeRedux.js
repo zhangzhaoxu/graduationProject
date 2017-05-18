@@ -1,17 +1,19 @@
 import { combineReducers } from 'redux';
 
-// 引入 reducer 及 actionCreator
-import table from '../components/Home/TableRedux';
-import modal from '../components/Home/ModalRedux';
 import register from '../components/Register/RegisterRedux';
+import homeMain from '../components/Home/MainRedux';
+import homeTabs from '../components/Home/TabsWrapperRedux';
+import competitions from './CompetitionsRedux';
 
 export default combineReducers({
-    table,
-    modal,
-    register
+    register,
+    homeMain,
+    homeTabs,
+    competitions
 });
 
-export * as tableActions from '../components/Home/TableRedux';
-export * as modalActions from '../components/Home/ModalRedux';
 export * as registerActions from '../components/Register/RegisterRedux';
+export * as homeMainActions from '../components/Home/MainRedux';
+export * as homeTabsActions from '../components/Home/TabsWrapperRedux';
+export * as competitionsActions from './CompetitionsRedux';
 

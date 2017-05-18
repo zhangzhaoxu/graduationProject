@@ -11,20 +11,36 @@ import 'whatwg-fetch';
 import 'antd/dist/antd.less';
 import './app.scss';
 
-const store = configureStore();
-const history = syncHistoryWithStore(browserHistory, store);
+import defaultImg from '../../static/xiaoxin.jpg';
 
 const appEle = document.getElementById('App');
-const microdata = JSON.parse(appEle.getAttribute('data-microdata'));
-let mydata = JSON.parse(appEle.getAttribute('data-mydata'));
-mydata.nick += ', then client reRender';
+const userInfo = JSON.parse(appEle.getAttribute('data-userInfo')) || {};
+const homeData = JSON.parse(appEle.getAttribute('data-homeData')) || {};
+const competitionsData = JSON.parse(appEle.getAttribute('data-competitionsData')) || {};
+
+const initialState = {
+    all: {
+        register: {
+            logged: userInfo.isLogged == "logged" ? true : false,
+            headPorhtrait: defaultImg,
+            message: 0
+        },
+        homeMain: {
+            newsList: homeData.newsData
+        },
+        homeTabs: {
+            tabsList: homeData.tabsData
+        },
+        competitions: {
+            competitionsList: competitionsData
+        }
+    }
+};
+
+const store = configureStore(initialState);
+const history = syncHistoryWithStore(browserHistory, store);
 
 class App extends React.Component {
-    static propTypes = {
-        microdata: PropTypes.object,
-        mydata: PropTypes.object,
-    };
-    
     render() {
         return (
             <Provider store={store}>
@@ -36,4 +52,4 @@ class App extends React.Component {
     }
 }
 
-render(<App mydata={mydata} microdata={microdata} /> , appEle);
+render(<App /> , appEle);

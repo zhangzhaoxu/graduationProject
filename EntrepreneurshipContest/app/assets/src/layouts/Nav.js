@@ -4,11 +4,14 @@ import { push } from 'react-router-redux';
 import { Menu, Icon } from 'antd';
 import { bindActionCreators } from 'redux';
 import { registerActions } from '../views/HomeRedux';
+import { competitionsActions } from '../views/HomeRedux';
 import Register from '../components/Register/Register';
 import './Nav.scss';
 
 const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
+
+console.log(competitionsActions);
 
 @connect(
     state => ({
@@ -20,7 +23,8 @@ const MenuItemGroup = Menu.ItemGroup;
         return {
             push: bindActionCreators(push, dispatch),
             logIn: bindActionCreators(registerActions.logIn, dispatch),
-            logOut: bindActionCreators(registerActions.logOut, dispatch)
+            logOut: bindActionCreators(registerActions.logOut, dispatch),
+            changeQuery: bindActionCreators(competitionsActions.loadCompetitions, dispatch)
         }
     }
 )
@@ -38,8 +42,13 @@ export default class Nav extends Component {
         this.setState({
             current: e.key
         });
-
-        this.props.push(e.key);
+        
+        if(e.key.indexOf('setting') == 0) {
+            let id = e.key.split(':')[1];
+            this.props.changeQuery(id);
+        } else {
+            this.props.push(e.key);
+        }
     };
     
     render () {
@@ -55,21 +64,21 @@ export default class Nav extends Component {
                     mode="horizontal"
                     className="my-menu"
                 >
-                    <Menu.Item key="home">
+                    <Menu.Item key="/home">
                         <Icon type="home" className="homeIcon" /> <span className="homeIcon">首页</span>
                     </Menu.Item>
-                    <SubMenu key="competitions" title={<span onClick={this.handleClick.bind(this, {key: 'competitions'})}><Icon type="down-square-o" />全部赛事</span>}>
+                    <SubMenu key="competitions" title={<span onClick={this.handleClick.bind(this, {key: '/competitions'})}><Icon type="down-square-o" />全部赛事</span>}>
                         <MenuItemGroup title="赛事状态">
-                            <Menu.Item key="setting:1">进行中</Menu.Item>
-                            <Menu.Item key="setting:2">筹备中</Menu.Item>
-                            <Menu.Item key="setting:3">已开赛</Menu.Item>
+                            <Menu.Item key="setting:1">筹备中</Menu.Item>
+                            <Menu.Item key="setting:2">进行中</Menu.Item>
+                            <Menu.Item key="setting:3">已结束</Menu.Item>
                         </MenuItemGroup>
                         <MenuItemGroup title="赛事类型">
-                            <Menu.Item key="setting:3">IT类</Menu.Item>
-                            <Menu.Item key="setting:4">金融类</Menu.Item>
+                            <Menu.Item key="setting:4">IT类</Menu.Item>
+                            <Menu.Item key="setting:5">金融类</Menu.Item>
                         </MenuItemGroup>
                     </SubMenu>
-                    <Menu.Item key="forum">
+                    <Menu.Item key="/forum">
                         赛事论坛
                     </Menu.Item>
                 </Menu>

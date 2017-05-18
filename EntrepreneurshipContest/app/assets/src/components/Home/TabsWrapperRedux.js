@@ -1,47 +1,47 @@
 const initialState = {
     loading: true,
     error: false,
-    newsList: [],
+    tabsList: [],
 };
 
-const LOAD_NEWS = 'LOAD_NEWS';
-const LOAD_NEWS_SUCCESS = 'LOAD_NEWS_SUCCESS';
-const LOAD_NEWS_ERROR = 'LOAD_NEWS_ERROR';
+const LOAD_TABS = 'LOAD_TABS';
+const LOAD_TABS_SUCCESS = 'LOAD_TABS_SUCCESS';
+const LOAD_TABS_ERROR = 'LOAD_TABS_ERROR';
 
-export function loadNEWS() {
+export function loadtabs() {
     return {
-        types: [LOAD_NEWS, LOAD_NEWS_SUCCESS, LOAD_NEWS_ERROR],
-        url: '/api/news.json'
+        types: [LOAD_TABS, LOAD_TABS_SUCCESS, LOAD_TABS_ERROR],
+        url: '/api/homeTabs.json'
     };
 }
 
-export default function previewNews(state = initialState, action) {
+export default function previewTabs(state = initialState, action) {
     switch (action.type) {
-        case LOAD_NEWS: {
+        case LOAD_TABS: {
             return {
                 ...state,
                 loading: true,
                 error: false,
             };
         }
-
-        case LOAD_NEWS_SUCCESS: {
+        
+        case LOAD_TABS_SUCCESS: {
             return {
                 ...state,
                 loading: false,
                 error: false,
-                newsList: action.newsData,
+                TABSList: action.tabsData,
             };
         }
-
-        case LOAD_NEWS_ERROR: {
+        
+        case LOAD_TABS_ERROR: {
             return {
                 ...state,
                 loading: false,
                 error: true,
             };
         }
-
+        
         default:
             return state;
     }

@@ -20,7 +20,7 @@ class Default extends Component {
     }
 
     render() {
-        const { microdata, title, children } = this.props;
+        const { title, children } = this.props;
 
         return (
             <html>

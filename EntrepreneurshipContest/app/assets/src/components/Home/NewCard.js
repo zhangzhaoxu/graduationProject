@@ -9,14 +9,27 @@ export default class NewCard extends React.Component {
     };
 
     render() {
-        let { newsTitle, newsImg, newsDes } = this.props;
+        let { newsTitle, newsImg, newsDes, index } = this.props;
         return (
             <div className="newCon">
-                <img src={newsImg} className="newImg"/>
-                <div className="newInfo">
-                    <p className="infoTitle">{newsTitle}</p>
-                    <p className="infoDes">{newsDes}</p>
-                </div>
+                {index % 2 === 0 ?
+                    <div>
+                        <img src={newsImg} className="newImg"/>
+                        <div className="newInfo">
+                            <p className="infoTitle">{newsTitle}</p>
+                            <p className="infoDes">{newsDes}</p>
+                        </div>
+                    </div>
+                    :
+                    <div>
+                        <div className="newInfo">
+                            <p className="infoTitle">{newsTitle}</p>
+                            <p className="infoDes">{newsDes}</p>
+                        </div>
+                        <img src={newsImg} className="newImg"/>
+                    </div>
+                }
+
             </div>
         )
     }

@@ -4,24 +4,29 @@ import Default from './layout/Default';
 class Index extends Component {
     static propTypes = {
         microdata: PropTypes.object,
-        mydata: PropTypes.object,
+        userInfo: PropTypes.object,
+        homeData: PropTypes.object,
+        competitionsData: PropTypes.object
     };
     
     render() {
         
-        const { microdata, mydata } = this.props;
+        const { microdata, userInfo, homeData, competitionsData } = this.props;
         let homeJs = `${microdata.styleDomain}/build/app.bundle.js`;
         let scriptUrls = [homeJs];
         
         return (
             <Default
-                microdata={microdata}
+                userInfo={userInfo}
+                homeData={homeData}
+                competitionsData={competitionsData}
                 scriptUrls={scriptUrls}
                 title={"demo"}>
                 <div id="App"
-                     data-microdata={JSON.stringify(microdata)}
-                     data-mydata={JSON.stringify(mydata)}>
-                    <div>hello：{mydata.nick}</div>
+                     data-userInfo={JSON.stringify(userInfo)}
+                     data-homeData={JSON.stringify(homeData)}
+                     data-competitionsData={JSON.stringify(competitionsData)}
+                >
                 </div>
             </Default>
         );

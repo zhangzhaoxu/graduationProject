@@ -24,6 +24,9 @@
     .logInfo {
         display: inline-block;
         margin-left: 10px;
+        span {
+            cursor: pointer;
+        }
         .personal {
             margin-left: 14px;
         }
@@ -49,6 +52,10 @@
             }
         }
     }
+}
+
+.unLogged {
+    width: 10%;
 }
 
 .ant-menu {

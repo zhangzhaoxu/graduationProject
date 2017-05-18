@@ -1,0 +1,31 @@
+.post-info {
+    width: 1080px;
+    margin: 20px auto;
+    overflow: hidden;
+    border: 1px solid #eee;
+
+    .left-pane {
+        width: 700px;
+        float: left;
+        background-color: #fff;
+        .post-info-header {
+            border-bottom: 1px solid #ccc;
+            height: 70px;
+            .author-question {
+                padding-left: 10px;
+                line-height: 70px;
+                font-size: 20px;
+                color: #404040;
+                max-width: 500px;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+        }
+    }
+
+    .right-pane {
+        width: 350px;
+        margin-left: 20px;
+        float: left;
+    }
+}

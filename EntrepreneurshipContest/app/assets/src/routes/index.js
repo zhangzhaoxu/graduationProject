@@ -14,16 +14,16 @@ import SignUp from '../components/Competitions/SignUp';
 
 const routes = browserHistory => (
     <Router history={browserHistory}>
-        <Route path="/" component={Frame}>
+        <Route path="/home" component={Frame}>
             <IndexRoute component={Home} />
             <Route path="/user" component={User} />
             <Route path="/detail" component={Detail} />
             <Route path="/forum" component={Forum} />
+            <Route path="/personal" component={Personal} />
             <Route path="/competitions" component={Competitions}>
                 <IndexRoute component={CollapseLeft} />
                 <Route path="/competitions/signup" component={SignUp} />
             </Route>
-            <Route path="/personal" component={Personal} />
         </Route>
     </Router>
 );

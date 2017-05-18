@@ -1,0 +1,110 @@
+[
+  {
+    "title": "国内赛事",
+    "pageNum": 50,
+    "competitionsData": [
+      {
+        "imgUrl": "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
+        "title": "我是测试标题",
+        "des": "我是测试内容我是测试内容"
+      },
+      {
+        "imgUrl": "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
+        "title": "我是测试标题",
+        "des": "我是测试内容我是测试内容"
+      },
+      {
+        "imgUrl": "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
+        "title": "我是测试标题",
+        "des": "我是测试内容我是测试内容"
+      },
+      {
+        "imgUrl": "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
+        "title": "我是测试标题",
+        "des": "我是测试内容我是测试内容"
+      },
+      {
+        "imgUrl": "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
+        "title": "我是测试标题",
+        "des": "我是测试内容我是测试内容"
+      },
+      {
+        "imgUrl": "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
+        "title": "我是测试标题",
+        "des": "我是测试内容我是测试内容"
+      }
+    ]
+  },
+  {
+    "title": "国外赛事",
+    "pageNum": 20,
+    "competitionsData": [
+      {
+        "imgUrl": "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
+        "title": "我是测试标题",
+        "des": "我是测试内容我是测试内容"
+      },
+      {
+        "imgUrl": "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
+        "title": "我是测试标题",
+        "des": "我是测试内容我是测试内容"
+      },
+      {
+        "imgUrl": "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
+        "title": "我是测试标题",
+        "des": "我是测试内容我是测试内容"
+      },
+      {
+        "imgUrl": "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
+        "title": "我是测试标题",
+        "des": "我是测试内容我是测试内容"
+      },
+      {
+        "imgUrl": "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
+        "title": "我是测试标题",
+        "des": "我是测试内容我是测试内容"
+      },
+      {
+        "imgUrl": "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
+        "title": "我是测试标题",
+        "des": "我是测试内容我是测试内容"
+      }
+    ]
+  },
+  {
+    "title": "省级赛事",
+    "pageNum": 17,
+    "competitionsData": [
+      {
+        "imgUrl": "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
+        "title": "我是测试标题",
+        "des": "我是测试内容我是测试内容"
+      },
+      {
+        "imgUrl": "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
+        "title": "我是测试标题",
+        "des": "我是测试内容我是测试内容"
+      },
+      {
+        "imgUrl": "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
+        "title": "我是测试标题",
+        "des": "我是测试内容我是测试内容"
+      },
+      {
+        "imgUrl": "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
+        "title": "我是测试标题",
+        "des": "我是测试内容我是测试内容"
+      },
+      {
+        "imgUrl": "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
+        "title": "我是测试标题",
+        "des": "我是测试内容我是测试内容"
+      },
+      {
+        "imgUrl": "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
+        "title": "我是测试标题",
+        "des": "我是测试内容我是测试内容"
+      }
+    ]
+  }
+]

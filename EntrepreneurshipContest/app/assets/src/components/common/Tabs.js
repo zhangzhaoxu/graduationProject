@@ -12,7 +12,7 @@ export default class MyTabs extends React.Component {
         let testData = this.props.data;
         return (
             <div className="tabCon">
-                <Tabs>
+                <Tabs type="card">
                     {
                         testData.map((item, index) => {
                             return (

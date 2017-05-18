@@ -1,6 +1,11 @@
 .tabLi {
-    color: #5a5a5a;
+    color: #108ee9;
     line-height: 20px;
+    cursor: pointer;
+}
+
+.tabLi:hover {
+    color: #f04134;
 }
 
 .tabLiName {

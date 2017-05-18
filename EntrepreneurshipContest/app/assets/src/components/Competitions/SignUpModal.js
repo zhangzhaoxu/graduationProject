@@ -3,7 +3,6 @@ import { Button, Modal, Icon, Tabs } from 'antd';
 import './SignUp.scss';
 import SignUpSingleForm from './SignUpSingleForm';
 import SignUpBluxForm from './SignUpBluxForm';
-console.log(SignUpBluxForm);
 const TabPane = Tabs.TabPane;
 
 export default class SignUpModal extends React.Component {

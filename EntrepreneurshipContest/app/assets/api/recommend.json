@@ -1,0 +1,77 @@
+[
+  {
+    "title": "日常赛事",
+    "recommendData": [
+      {
+        "title": "推荐部分标题",
+        "imgUrl": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1495107729578&di=22206056b8a0d78ec78d9489b870017a&imgtype=0&src=http%3A%2F%2Fimg.mp.itc.cn%2Fupload%2F20170107%2F8c4ff9aa93054f3e9d18b0d518defdb1_th.jpg",
+        "des": "推荐部分描述"
+      },
+      {
+        "title": "推荐部分标题",
+        "imgUrl": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1495107729578&di=22206056b8a0d78ec78d9489b870017a&imgtype=0&src=http%3A%2F%2Fimg.mp.itc.cn%2Fupload%2F20170107%2F8c4ff9aa93054f3e9d18b0d518defdb1_th.jpg",
+        "des": "推荐部分描述"
+      },
+      {
+        "title": "推荐部分标题",
+        "imgUrl": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1495107729578&di=22206056b8a0d78ec78d9489b870017a&imgtype=0&src=http%3A%2F%2Fimg.mp.itc.cn%2Fupload%2F20170107%2F8c4ff9aa93054f3e9d18b0d518defdb1_th.jpg",
+        "des": "推荐部分描述"
+      },
+      {
+        "title": "推荐部分标题",
+        "imgUrl": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1495107729578&di=22206056b8a0d78ec78d9489b870017a&imgtype=0&src=http%3A%2F%2Fimg.mp.itc.cn%2Fupload%2F20170107%2F8c4ff9aa93054f3e9d18b0d518defdb1_th.jpg",
+        "des": "推荐部分描述"
+      }
+    ]
+  },
+  {
+    "title": "相关赛事",
+    "recommendData": [
+      {
+        "title": "推荐部分标题",
+        "imgUrl": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1495107729578&di=22206056b8a0d78ec78d9489b870017a&imgtype=0&src=http%3A%2F%2Fimg.mp.itc.cn%2Fupload%2F20170107%2F8c4ff9aa93054f3e9d18b0d518defdb1_th.jpg",
+        "des": "推荐部分描述"
+      },
+      {
+        "title": "推荐部分标题",
+        "imgUrl": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1495107729578&di=22206056b8a0d78ec78d9489b870017a&imgtype=0&src=http%3A%2F%2Fimg.mp.itc.cn%2Fupload%2F20170107%2F8c4ff9aa93054f3e9d18b0d518defdb1_th.jpg",
+        "des": "推荐部分描述"
+      },
+      {
+        "title": "推荐部分标题",
+        "imgUrl": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1495107729578&di=22206056b8a0d78ec78d9489b870017a&imgtype=0&src=http%3A%2F%2Fimg.mp.itc.cn%2Fupload%2F20170107%2F8c4ff9aa93054f3e9d18b0d518defdb1_th.jpg",
+        "des": "推荐部分描述"
+      },
+      {
+        "title": "推荐部分标题",
+        "imgUrl": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1495107729578&di=22206056b8a0d78ec78d9489b870017a&imgtype=0&src=http%3A%2F%2Fimg.mp.itc.cn%2Fupload%2F20170107%2F8c4ff9aa93054f3e9d18b0d518defdb1_th.jpg",
+        "des": "推荐部分描述"
+      }
+    ]
+  },
+  {
+    "title": "相关新闻",
+    "recommendData": [
+      {
+        "title": "推荐部分标题",
+        "imgUrl": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1495107729578&di=22206056b8a0d78ec78d9489b870017a&imgtype=0&src=http%3A%2F%2Fimg.mp.itc.cn%2Fupload%2F20170107%2F8c4ff9aa93054f3e9d18b0d518defdb1_th.jpg",
+        "des": "推荐部分描述"
+      },
+      {
+        "title": "推荐部分标题",
+        "imgUrl": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1495107729578&di=22206056b8a0d78ec78d9489b870017a&imgtype=0&src=http%3A%2F%2Fimg.mp.itc.cn%2Fupload%2F20170107%2F8c4ff9aa93054f3e9d18b0d518defdb1_th.jpg",
+        "des": "推荐部分描述"
+      },
+      {
+        "title": "推荐部分标题",
+        "imgUrl": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1495107729578&di=22206056b8a0d78ec78d9489b870017a&imgtype=0&src=http%3A%2F%2Fimg.mp.itc.cn%2Fupload%2F20170107%2F8c4ff9aa93054f3e9d18b0d518defdb1_th.jpg",
+        "des": "推荐部分描述"
+      },
+      {
+        "title": "推荐部分标题",
+        "imgUrl": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1495107729578&di=22206056b8a0d78ec78d9489b870017a&imgtype=0&src=http%3A%2F%2Fimg.mp.itc.cn%2Fupload%2F20170107%2F8c4ff9aa93054f3e9d18b0d518defdb1_th.jpg",
+        "des": "推荐部分描述"
+      }
+    ]
+  }
+]

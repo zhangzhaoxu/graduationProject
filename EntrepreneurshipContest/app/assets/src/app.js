@@ -15,8 +15,10 @@ import defaultImg from '../../static/xiaoxin.jpg';
 
 const appEle = document.getElementById('App');
 const userInfo = JSON.parse(appEle.getAttribute('data-userInfo')) || {};
-const homeData = JSON.parse(appEle.getAttribute('data-homeData')) || {};
+const homeData = JSON.parse(appEle.getAttribute('data-homeData')) || [];
 const competitionsData = JSON.parse(appEle.getAttribute('data-competitionsData')) || {};
+const recommendData = JSON.parse(appEle.getAttribute('data-recommendData')) || [];
+const forumData = JSON.parse(appEle.getAttribute('data-forumData')) || {};
 
 const initialState = {
     all: {
@@ -25,14 +27,17 @@ const initialState = {
             headPorhtrait: defaultImg,
             message: 0
         },
-        homeMain: {
-            newsList: homeData.newsData
-        },
-        homeTabs: {
+        homePersonal: {
+            newsList: homeData.newsData,
             tabsList: homeData.tabsData
         },
         competitions: {
-            competitionsList: competitionsData
+            competitionsList: competitionsData,
+            recommendList: recommendData
+        },
+        forum: {
+            selectionList: forumData.selectionData,
+            postList: forumData.postData
         }
     }
 };
@@ -46,6 +51,7 @@ class App extends React.Component {
             <Provider store={store}>
                 <div>
                     {routes(history)}
+                    <DevTools />
                 </div>
             </Provider>
         )

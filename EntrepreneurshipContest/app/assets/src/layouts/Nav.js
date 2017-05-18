@@ -11,8 +11,6 @@ import './Nav.scss';
 const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
 
-console.log(competitionsActions);
-
 @connect(
     state => ({
         logged: state.all.register.logged,
@@ -43,10 +41,17 @@ export default class Nav extends Component {
             current: e.key
         });
         
-        if(e.key.indexOf('setting') == 0) {
+        if(e.key.indexOf('setting') !== -1) {
             let id = e.key.split(':')[1];
-            this.props.changeQuery(id);
+            let href = window.location.href;
+            if (href.indexOf('competitions') !== -1) {
+                this.props.changeQuery(id);
+            }
+            else {
+                this.props.push('/competitions?id=' + id);
+            }
         } else {
+            console.log(e.key);
             this.props.push(e.key);
         }
     };

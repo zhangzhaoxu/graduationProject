@@ -5,7 +5,7 @@ import Slider from '../components/Home/Slider';
 import Main from '../components/Home/Main';
 import Tabs from '../components/common/Tabs';
 import tabWrapper from '../components/Home/TabsWrapper';
-import { registerActions } from './HomeRedux';
+import { homeActions } from './HomeRedux';
 import './Home.scss';
 import './Forum.scss';
 
@@ -13,15 +13,22 @@ import './Forum.scss';
 	state => {
 		console.log(state);
 		return {
-			news: state.all.homeMain.newsList,
-			tabs: state.all.homeTabs.tabsList
+			news: state.all.homePersonal.newsList,
+			tabs: state.all.homePersonal.tabsList
 		}
 	},
 	dispatch => ({
-		
+		loadNewsList: bindActionCreators(homeActions.loadNewsList, dispatch),
+		loadTabsList: bindActionCreators(homeActions.loadTabsList, dispatch)
 	})
 )
 export default class Home extends Component {
+	
+	componentDidMount() {
+		let { news, tabs, loadNewsList, loadTabsList } = this.props;
+		if (news.length == 0) loadNewsList();
+		if (tabs.length == 0) loadTabsList();
+	}
 
 	render() {
 		

@@ -4,6 +4,7 @@ import { Card, Row, Col, Button, Pagination } from 'antd';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { competitionsActions } from '../../views/HomeRedux';
+import { GetQueryString } from '../../utils/utils';
 import './CollapseLeft.scss';
 
 const Panel = Collapse.Panel;
@@ -15,18 +16,25 @@ const Panel = Collapse.Panel;
     },
     (dispatch) => {
         return {
-            changePage: bindActionCreators(competitionsActions.changePage, dispatch)
+            changePage: bindActionCreators(competitionsActions.changePage, dispatch),
+            loadCompetitions: bindActionCreators(competitionsActions.loadCompetitions, dispatch)
         }
     }
 )
 export default class MyCollapse extends Component {
 
+    componentDidMount() {
+        let { competitionsList, loadCompetitions } = this.props;
+        let id = GetQueryString('id') || 0;
+        if(competitionsList.length === 0) {
+            loadCompetitions(id);
+        }
+    }
+
     render() {
     
         let { competitionsList, changePage } = this.props;
-        console.log(changePage);
         function onPageChange(index) {
-            alert(index);
             changePage(index);
         }
         

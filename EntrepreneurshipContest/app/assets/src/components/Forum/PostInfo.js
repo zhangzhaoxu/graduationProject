@@ -21,7 +21,7 @@ export default class PostInfo extends React.Component {
                     </div>
                 </div>
                 <div className="right-pane">
-                    <RightPane />
+                    <RightPane recommendsList={this.props.recommendList} />
                 </div>
             </div>
         )

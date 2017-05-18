@@ -6,6 +6,11 @@ const Static = require('./app/middleware/static.js');
 const VERSION = require('./app/assets/package.json').version;
 var newsData = require('./app/assets/api/news.json');
 var tabsData = require('./app/assets/api/homeTabs.json');
+var selectionData = require('./app/assets/api/selection.json');
+var changePostData = require('./app/assets/api/post1.json');
+var pagePostData = require('./app/assets/api/post2.json');
+var postData = require('./app/assets/api/post.json');
+var recommendData = require('./app/assets/api/recommend.json');
 var competitionsData = require('./app/assets/api/competitions.json');
 
 
@@ -30,10 +35,27 @@ const App = () => {
                 tabsData: tabsData
             },
             competitionsData: {
-                competitionsData: competitionsData
+                competitionsData: []
             },
+            forumData: {
+                selectionData: [],
+                postData: []
+            },
+            recommendData: [],
             microdata: microdata
         }, true);
+    });
+    
+    router.get('/api/newsList.json', function* () {
+        this.body = {
+            newsList: newsData
+        }
+    });
+    
+    router.get('/api/tabsList.json', function* () {
+        this.body = {
+            tabsList: tabsData
+        }
     });
 
     router.get('/logIn', function* () {
@@ -57,12 +79,17 @@ const App = () => {
                 isLogged: isLogged
             },
             homeData: {
-                newsData: newsData,
-                tabsData: tabsData
+                newsData: [],
+                tabsData: []
             },
             competitionsData: {
                 competitionsData: competitionsData
             },
+            forumData: {
+                selectionData: [],
+                postData: []
+            },
+            recommendData: [],
             microdata: microdata
         }, true);
     });
@@ -74,12 +101,17 @@ const App = () => {
                 isLogged: isLogged
             },
             homeData: {
-                newsData: newsData,
-                tabsData: tabsData
+                newsData: [],
+                tabsData: []
             },
             competitionsData: {
                 competitionsData: competitionsData
             },
+            forumData: {
+                selectionData: [],
+                postData: []
+            },
+            recommendData: [],
             microdata: microdata
         }, true);
     });
@@ -91,14 +123,43 @@ const App = () => {
                 isLogged: isLogged
             },
             homeData: {
-                newsData: newsData,
-                tabsData: tabsData
+                newsData: [],
+                tabsData: []
             },
             competitionsData: {
                 competitionsData: competitionsData
             },
+            forumData: {
+                selectionData: selectionData,
+                postData: postData
+            },
+            recommendData: recommendData,
             microdata: microdata
         }, true);
+    });
+    
+    router.get('/api/selections.json', function* () {
+        this.body = {
+            selectionData: selectionData
+        }
+    });
+
+    router.get('/api/selectionChange.json', function* () {
+        this.body = {
+            postData: changePostData
+        }
+    });
+
+    router.get('/api/postPageChange.json', function* () {
+        this.body = {
+            postData: pagePostData
+        }
+    });
+    
+    router.get('/api/posts.json', function* () {
+        this.body = {
+            postData: postData
+        }
     });
 
     router.get('/competitions', function* () {
@@ -108,18 +169,20 @@ const App = () => {
                 isLogged: isLogged
             },
             homeData: {
-                newsData: newsData,
-                tabsData: tabsData
+                newsData: [],
+                tabsData: []
             },
             competitionsData: {
                 competitionsData: competitionsData  
             },
+            recommendData: recommendData,
             microdata: microdata
         }, true);
     });
 
     router.get('/api/competitions.json', function* () {
         var id = this.query.id;
+        if(id == 0) id = '';
         var data = require('./app/assets/api/competitions'+id+'.json');
         this.body =  {
             competitionsData: {
@@ -136,6 +199,12 @@ const App = () => {
             id: id
         }
     });
+    
+    router.get('/api/recommend.json', function* () {
+        this.body = {
+            recommendData: recommendData
+        }
+    });
 
     router.get('/competitions/signup', function* () {
         var isLogged = this.cookies.get("isLogged");
@@ -144,11 +213,15 @@ const App = () => {
                 isLogged: isLogged
             },
             homeData: {
-                newsData: newsData,
-                tabsData: tabsData
+                newsData: [],
+                tabsData: []
             },
             competitionsData: {
                 competitionsData: competitionsData
+            },
+            forumData: {
+                selectionData: [],
+                postData: []
             },
             microdata: microdata
         }, true);
@@ -176,8 +249,8 @@ const App = () => {
             extname: '.js',                 // view 层直接渲染文件名后缀
             beautify: true,                 // 是否需要对 DOM 结构进行格式化
             writeResp: false,               // 是否需要在 view 层直接输出
-        },
-    }
+        }
+    };
     reactview(app);
     
     return app;
@@ -186,8 +259,8 @@ const createApp = () => {
     const app = App();
     
     app.listen(3000, () => {
-        console.log('3000 is listening!');
-});
+         console.log('3000 is listening!');
+    });
     
     return app;
 };

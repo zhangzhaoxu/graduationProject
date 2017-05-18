@@ -37,14 +37,18 @@
         }
         .right-img-con {
             padding-top: 20px;
+            position: absolute;
+            bottom: 5px;
             .right-img {
                 max-width: 100px;
                 margin-right: 10px;
-                vertical-align: middle;
+                vertical-align: bottom;
             }
         }
         .right-footer {
-            float: right;
+            position: absolute;
+            bottom: 0;
+            right: 0;
             color: #ccc;
             margin: 10px 5px 0 0;
         }

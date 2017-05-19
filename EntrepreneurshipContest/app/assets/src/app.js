@@ -19,6 +19,7 @@ const homeData = JSON.parse(appEle.getAttribute('data-homeData')) || [];
 const competitionsData = JSON.parse(appEle.getAttribute('data-competitionsData')) || {};
 const recommendData = JSON.parse(appEle.getAttribute('data-recommendData')) || [];
 const forumData = JSON.parse(appEle.getAttribute('data-forumData')) || {};
+const answerData = JSON.parse(appEle.getAttribute('data-answerData')) || [];
 
 const initialState = {
     all: {
@@ -38,6 +39,9 @@ const initialState = {
         forum: {
             selectionList: forumData.selectionData,
             postList: forumData.postData
+        },
+        post: {
+            answerList: answerData
         }
     }
 };
@@ -51,7 +55,6 @@ class App extends React.Component {
             <Provider store={store}>
                 <div>
                     {routes(history)}
-                    <DevTools />
                 </div>
             </Provider>
         )

@@ -9,6 +9,7 @@ import Forum from '../views/Forum';
 import User from '../views/User';
 import Personal from '../views/Personal';
 import Competitions from '../views/Competitions';
+import Post from '../views/Post';
 import CollapseLeft from '../components/Competitions/CollapseLeft';
 import SignUp from '../components/Competitions/SignUp';
 
@@ -19,6 +20,7 @@ const routes = browserHistory => (
             <Route path="/user" component={User} />
             <Route path="/detail" component={Detail} />
             <Route path="/forum" component={Forum} />
+            <Route path="/post" component={Post} />
             <Route path="/personal" component={Personal} />
             <Route path="/competitions" component={Competitions}>
                 <IndexRoute component={CollapseLeft} />

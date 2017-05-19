@@ -20,7 +20,6 @@ const MenuItemGroup = Menu.ItemGroup;
     (dispatch) => {
         return {
             push: bindActionCreators(push, dispatch),
-            logIn: bindActionCreators(registerActions.logIn, dispatch),
             logOut: bindActionCreators(registerActions.logOut, dispatch),
             changeQuery: bindActionCreators(competitionsActions.loadCompetitions, dispatch)
         }

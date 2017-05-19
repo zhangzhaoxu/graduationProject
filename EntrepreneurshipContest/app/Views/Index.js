@@ -11,7 +11,7 @@ class Index extends Component {
     
     render() {
         
-        const { microdata, userInfo, homeData, competitionsData, recommendData, forumData } = this.props;
+        const { microdata, userInfo, homeData, competitionsData, recommendData, forumData, answerData } = this.props;
         let homeJs = `${microdata.styleDomain}/build/app.bundle.js`;
         let scriptUrls = [homeJs];
         
@@ -22,6 +22,7 @@ class Index extends Component {
                 competitionsData={competitionsData}
                 recommendData={recommendData}
                 forumData={forumData}
+                answerData={answerData}
                 scriptUrls={scriptUrls}
                 title={"demo"}>
                 <div id="App"
@@ -30,6 +31,7 @@ class Index extends Component {
                      data-competitionsData={JSON.stringify(competitionsData)}
                      data-recommendData={JSON.stringify(recommendData)}
                      data-forumData={JSON.stringify(forumData)}
+                     data-answerData={JSON.stringify(answerData)}
                 >
                 </div>
             </Default>

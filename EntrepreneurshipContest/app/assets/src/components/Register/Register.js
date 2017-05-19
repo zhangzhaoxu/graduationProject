@@ -13,7 +13,7 @@ export default class Register extends React.Component {
     };
     
     render() {
-        let {headPorhtrait, logged, message, push, logIn, logOut} = this.props;
+        let {headPorhtrait, logged, message, logOut, push } = this.props;
         
         return (
             <div className={logged ? "register" : "register unLogged"}>
@@ -33,7 +33,7 @@ export default class Register extends React.Component {
                         </div> 
                         : ''}
                     {logged ? <span className="personal" onClick={()=> {push('/personal')}}>个人中心</span> : ''}
-                    {logged ? <span className="logOut" onClick={logOut}>登出</span> : <span onClick={logIn}>登录</span>}
+                    {logged ? <span className="logOut" onClick={logOut}>登出</span> : <span onClick={() => { push('/user') }}>登录</span>}
                 </div>
             </div>
         )

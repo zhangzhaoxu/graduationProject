@@ -1,7 +1,8 @@
 .login-form {
     max-width: 400px;
-    margin: 250px auto;
+    margin: 200px auto;
     padding: 20px;
+    padding-bottom: 55px;
     border-radius: 10px;
     background-color: #ffffff;
 }
@@ -10,4 +11,8 @@
 }
 .login-form-button {
     width: 100%;
+}
+
+.ant-row.ant-form-item.ant-form-item-with-help {
+    height: 43px !important;
 }

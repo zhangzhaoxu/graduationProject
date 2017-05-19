@@ -11,6 +11,8 @@ var changePostData = require('./app/assets/api/post1.json');
 var pagePostData = require('./app/assets/api/post2.json');
 var postData = require('./app/assets/api/post.json');
 var recommendData = require('./app/assets/api/recommend.json');
+var answersData = require('./app/assets/api/postInfo.json');
+var answersPageChangeData = require('./app/assets/api/postInfoChange.json');
 var competitionsData = require('./app/assets/api/competitions.json');
 
 
@@ -41,6 +43,7 @@ const App = () => {
                 selectionData: [],
                 postData: []
             },
+            answerData: [],
             recommendData: [],
             microdata: microdata
         }, true);
@@ -89,6 +92,7 @@ const App = () => {
                 selectionData: [],
                 postData: []
             },
+            answerData: [],
             recommendData: [],
             microdata: microdata
         }, true);
@@ -111,6 +115,7 @@ const App = () => {
                 selectionData: [],
                 postData: []
             },
+            answerData: [],
             recommendData: [],
             microdata: microdata
         }, true);
@@ -133,9 +138,46 @@ const App = () => {
                 selectionData: selectionData,
                 postData: postData
             },
+            answerData: [],
             recommendData: recommendData,
             microdata: microdata
         }, true);
+    });
+    
+    
+    router.get('/post', function* () {
+        var isLogged = this.cookies.get("isLogged");
+        this.body = this.render('Index', {
+            userInfo : {
+                isLogged: isLogged
+            },
+            homeData: {
+                newsData: [],
+                tabsData: []
+            },
+            competitionsData: {
+                competitionsData: []
+            },
+            forumData: {
+                selectionData: [],
+                postData: []
+            },
+            answerData: answersData,
+            recommendData: recommendData,
+            microdata: microdata
+        }, true);
+    });
+    
+    router.get('/api/postAnswers.json', function* () {
+        this.body = {
+            answerList: answersData
+        }
+    });
+    
+    router.get('/api/postAnswersChange.json', function* () {
+        this.body = {
+            answerList: answersPageChangeData
+        }
     });
     
     router.get('/api/selections.json', function* () {
@@ -175,6 +217,7 @@ const App = () => {
             competitionsData: {
                 competitionsData: competitionsData  
             },
+            answerData: [],
             recommendData: recommendData,
             microdata: microdata
         }, true);
@@ -223,6 +266,8 @@ const App = () => {
                 selectionData: [],
                 postData: []
             },
+            answerData: [],
+            recommendData: [],
             microdata: microdata
         }, true);
     });

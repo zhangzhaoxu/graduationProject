@@ -147,26 +147,3 @@ export default class SignUp extends Component {
         )
     }
 }
-
-/*
- <Upload
- className="avatar-uploader"
- name="avatar"
- showUploadList={false}
- action="//jsonplaceholder.typicode.com/posts/"
- beforeUpload={beforeUpload}
- onChange={this.handleChange}
- >
- {
- imageUrl ?
- <img src={imageUrl} alt="" className="avatar" /> :
- <Icon type="plus" className="avatar-uploader-trigger" />
- }
- <h3 className="avatar-title">证件照上传</h3>
- </Upload>
- <Upload className="file-uploader" {...props}>
- <Button>
- <Icon type="upload" /> 附件上传
- </Button>
- </Upload>
- */

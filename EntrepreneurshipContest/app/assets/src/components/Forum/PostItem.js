@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
 import { Button } from 'antd';
-import './Post.scss';
+import './PostItem.scss';
 
-export default class Post extends Component {
+export default class PostItem extends Component {
     render() {
-        let { postInfo } = this.props;
-        console.log(postInfo);
+        let { postInfo, index, push } = this.props;
         return (
             <div className="post">
                 <div className="post-left">
-                    <span className="post-index-icon">1</span>
+                    <span className="post-index-icon">{index}</span>
                 </div>
-                <div className="post-right">
+                <div className="post-right" onClick={() => { push('/post'); }}>
                     <div className="right-title">
                         <span className="post-title">{postInfo.title}</span>
                         <img className="post-avatar" src={postInfo.avatar} />

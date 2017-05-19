@@ -6,15 +6,19 @@ const FormItem = Form.Item;
 
 class NormalLoginForm extends React.Component {
     handleSubmit = (e) => {
+        let { push, logIn } = this.props;
         e.preventDefault();
         this.props.form.validateFields((err, values) => {
             if (!err) {
+                logIn();
+                push('/home');
                 console.log('Received values of form: ', values);
             }
         });
     };
     render() {
         const { getFieldDecorator } = this.props.form;
+        let { register } = this.props;
         return (
             <Form onSubmit={this.handleSubmit} className="login-form">
                 <FormItem>
@@ -38,15 +42,25 @@ class NormalLoginForm extends React.Component {
                     })(
                         <Checkbox>Remember me</Checkbox>
                     )}
-                    <a className="login-form-forgot" href="">Forgot password</a>
                     <Button type="primary" htmlType="submit" className="login-form-button">
                         Log in
                     </Button>
-                    Or <a href="">register now!</a>
+                    Or <a href="" onClick={(e) => {
+                        e.preventDefault();
+                        register();
+                    }}>register now!</a>
                 </FormItem>
             </Form>
         );
     }
 }
 
-export default Form.create()(NormalLoginForm);
+export default class LogIn extends Component {
+    render() {
+        let UserForm = Form.create()(NormalLoginForm);
+        return (
+            <UserForm {...this.props} />
+        )
+    }
+}
+

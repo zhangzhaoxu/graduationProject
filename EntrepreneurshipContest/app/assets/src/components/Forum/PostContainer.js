@@ -1,7 +1,7 @@
 import React,{ Component } from 'react'
 import { Tabs } from 'antd';
 import { Pagination } from 'antd';
-import Post from './Post';
+import Post from './PostItem';
 import './PostContainer.scss';
 const TabPane = Tabs.TabPane;
 
@@ -20,7 +20,7 @@ export default class PostContainer extends Component {
                             <TabPane tab={item.title} key={index + 1}>
                                 {
                                     item.posts.map((item, index) => (
-                                        <Post key={'post'+index} postInfo={item} />
+                                        <Post push={this.props.push} index={index} key={'post'+index} postInfo={item} />
                                     ))
                                 }
                                 <Pagination className="post-pagination" showQuickJumper showSizeChanger onChange={handlePageChange} defaultCurrent={1} total={50} />

@@ -9,10 +9,11 @@ class PersonalMenu extends React.Component {
         current: '1',
     };
     handleClick = (e) => {
-        console.log('click ', e);
+        let { handleMenuChange } = this.props;
         this.setState({
-            current: e.key,
+            current: e.key
         });
+        handleMenuChange(e.key);
     };
     render() {
         return (

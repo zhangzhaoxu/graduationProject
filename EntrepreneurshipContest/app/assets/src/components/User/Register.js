@@ -76,6 +76,7 @@ class RegistrationForm extends React.Component {
     render() {
         const { getFieldDecorator } = this.props.form;
         const { autoCompleteResult } = this.state;
+        let { logIn } = this.props;
 
         const formItemLayout = {
             labelCol: {
@@ -221,7 +222,7 @@ class RegistrationForm extends React.Component {
                     )}
                 </FormItem>
                 <FormItem {...tailFormItemLayout}>
-                    <Button type="primary" htmlType="submit" size="large">Register</Button>
+                    <Button onClick={() => { logIn() }} type="primary" htmlType="submit" size="large">Register</Button>
                 </FormItem>
             </Form>
         );
@@ -230,4 +231,9 @@ class RegistrationForm extends React.Component {
 
 const WrappedRegistrationForm = Form.create()(RegistrationForm);
 
-export default WrappedRegistrationForm;
+export default class Register extends React.Component {
+    render() {
+        return <WrappedRegistrationForm {...this.props} />
+    }
+}
+

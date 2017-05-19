@@ -3,6 +3,7 @@ import CollapseRight from '../components/Competitions/CollapseRight';
 import { connect } from 'react-redux';
 import { competitionsActions } from './HomeRedux';
 import { bindActionCreators } from 'redux';
+import { push } from 'react-router-redux';
 import './Competitions.scss';
 
 @connect(
@@ -13,7 +14,8 @@ import './Competitions.scss';
     },
     (dispatch) => {
         return {
-            loadRecommends: bindActionCreators(competitionsActions.loadRecommends, dispatch)
+            loadRecommends: bindActionCreators(competitionsActions.loadRecommends, dispatch),
+            push: bindActionCreators(push, dispatch)
         }
     }
 )
@@ -33,7 +35,7 @@ export default class Competitions extends  Component {
                     {this.props.children}
                 </div>
                 <div className="right-panel">
-                    <CollapseRight recommendsList={this.props.recommendList} />
+                    <CollapseRight push={this.props.push} recommendsList={this.props.recommendList} />
                 </div>
             </div>
         )
